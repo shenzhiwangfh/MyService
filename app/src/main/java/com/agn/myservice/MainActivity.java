@@ -83,10 +83,14 @@ public class MainActivity extends AppCompatActivity {
         startService(startServiceIntent);
     }
 
+    private MyService myService;
+
     private ServiceConnection mConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             LogUtils.i("onServiceConnected");
+            MyService.Binder binder = (MyService.Binder) iBinder;
+            myService = binder.getService();
         }
 
         @Override

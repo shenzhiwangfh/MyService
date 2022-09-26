@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RemoteService</string>
+    <string name="foreground_service">Foreground Service</string>
+</resources>

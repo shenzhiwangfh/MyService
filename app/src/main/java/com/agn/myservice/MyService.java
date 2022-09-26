@@ -13,6 +13,12 @@ public class MyService extends Service {
 
     private MyBinder myBinder = new MyBinder();
 
+    public class Binder extends android.os.Binder {
+        public MyService getService() {
+            return MyService.this;
+        }
+    }
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
